@@ -44,6 +44,7 @@ app.get('/', routes.index);
 // Data fields
 app.get('/api/callToCourse', api.CallnumsToCourses);
 app.get('/api/deptToCourse', api.DepartmentsToCourses);
+app.get('/api/profToCourse', api.ProfessorsToCourses);
 
 app.get('/api/callnums', api.AllCallnumbers);
 app.get('/api/profs', api.AllProfessors);
