@@ -1,0 +1,22 @@
+<!DOCTYPE html5>
+<html>
+	<head>
+		{>"config_ga" /}
+
+		<title>
+			{+title/}
+		</title>
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+		{+prebase/}
+		{+include/}
+
+	</head>
+
+	<body>
+
+		{+body/}
+		<script src='/js/min/base.min.js'></script>
+		{+script/}
+	</body>
+
+</html>
