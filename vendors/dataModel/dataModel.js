@@ -8,29 +8,36 @@ var trieLib = require('./trie'),
 	keys = require('./parseKeys'),
 	Parse = require('parse').Parse;
 
-// All course data
-exports.CourseDump = function() { return callnumsToCoursedata; }
 
-// List of all departments
-exports.Departments = function() { return departments; }
+/* Data dump queries */
 
-// List of all requirements
-exports.Requirements = function () { return requirements; }
+// All course data (by callnums)
+exports.CallnumsToCourses = function() { return callnumsToCoursedata; }
 
-// List of all unique IDs
-exports.AllUniqueIDs = function () { return uniqueIds; }
+// All course data (by department)
+exports.DepartmentsToCourses = function() { return depToCoursedata; }
 
-// List of all callnumbers
+// All course data (by professors)
+exports.ProfessorsToCourses = function() { return profToCoursedata; }
+
+// All callnumbers
 exports.AllCallnumbers = function () { return callnums; }
 
-// Department to Courses
-exports.CourseByDepartment = function () { return depToCoursedata; }
+// All professors
+exports.AllProfessors = function () { return professors; }
 
-// Unique IDs to Courses
-exports.CourseByID = function () { return IDToCoursedata; }
+// All departments
+exports.AllDepartments = function() { return departments; }
+
+// All requirements
+exports.AllRequirements = function() { return requirements; }
+
+
+/* Internal fields */
 
 var IDToCoursedata = {};
 var depToCoursedata = {};
+var profToCoursedata = {};
 var callnumsToISBNs = {};
 var callnumsToCoursedata = {};
 var ISBNToBNdata = {};
@@ -38,6 +45,10 @@ var departments = ['Any'];
 var requirements = ['Any'];
 var callnums = [];
 var uniqueIds = [];
+var professors = [];
+
+
+/* Definitions */
 
 exports.initialize = function () {
 
@@ -160,6 +171,18 @@ var parseCourseQueries = function (res) {
 		if (!(currCourse['id'] in uniqueIds)) {
 			uniqueIds.push(currCourse['id']);
 		}
+
+		// Add Professor to Professor list
+		var shouldAdd = true;
+		for (var i=0; i < professors.length; i++) {
+			if (professors[i] == currCourse['prof']) {
+				shouldAdd = false;
+			}
+		}
+		if (shouldAdd) {
+			professors.push(currCourse['prof']);
+		}
+
 
 		IDToCoursedata[currCourse['id']] = currCourse;
 		addPermutations(currCourse);

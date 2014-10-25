@@ -18,8 +18,8 @@ var app = express();
 
 // Configure data model
 var dataModel = require('./vendors/dataModel/dataModel');
-//dataModel.initialize();                Initializes data model
-//dataModel.refreshLocalCaches();        Refreshes local caches
+dataModel.initialize();                //  Initializes data model
+dataModel.refreshLocalCaches();        //  Refreshes local caches
 
 
 // Configure environments
@@ -34,9 +34,24 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, '/public')));
 
+
+
+
 app.get('/', routes.index);
 
-// Special URL to refresh data without restarting heroku instance
+/* HTTP public API requests */
+
+// Data fields
+app.get('/api/callToCourse', api.CallnumsToCourses);
+app.get('/api/deptToCourse', api.DepartmentsToCourses);
+
+app.get('/api/callnums', api.AllCallnumbers);
+app.get('/api/profs', api.AllProfessors);
+app.get('/api/depts', api.AllDepartments);
+app.get('/api/reqs', api.AllRequirements);
+
+
+// Special URL to refresh data without restarting server
 app.get('/api/i/need/to/refresh/', routes.refresh);
 
 //  Create the server, start listening
