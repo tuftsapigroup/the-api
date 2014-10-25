@@ -1,0 +1,17 @@
+{>"layout" /}
+
+{<include}
+	<link href='/css/index.css' rel='stylesheet'>
+{/include}
+
+{<title}
+	tAPI
+{/title}
+
+{<body}
+	Hello, world.
+{/body}
+
+{<script}
+	<script src='/js/min/index.min.js'></script>
+{/script}

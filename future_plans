@@ -1,0 +1,42 @@
+
+
+
+file preference : xml/json
+historical data : e.g. 
+
+
+professor : rate my professor
+professor : schedule of professor
+professor : room/building/coordinates
+class     : room/building/coordinates
+class     : capacity/taken/how full %/ historical how fast it fills up
+
+
+coursedump
+professordump
+departmentdump
+requirementdump
+
+
+
+list of courses
+list of professors
+list of departments
+list of requirements
+
+
+
+
+query
+(combine these e.g. hescott in cs serves math req)
+
+- classes by department
+- classes by professor
+- classes by requirement
+- classes by location/proximity
+- classes by rating
+
+- professors by department
+- professors by rating
+- professors by schedule
+- professors by location (office)
