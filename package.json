@@ -16,9 +16,7 @@
     "connect": "2.0",
     "node-cache": "~0.4.1",
     "appcache-node": "~0.2.0",
-    "parse": "*"
-  },
-  "devDependencies": {
+    "parse": "*",
     "eyespect": "~0.1.10",
     "grunt": "^0.4.5",
     "grunt-concurrent": "~0.3.0",
