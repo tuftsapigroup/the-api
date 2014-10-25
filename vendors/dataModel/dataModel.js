@@ -197,6 +197,12 @@ var parseCourseQueries = function (res) {
 		}
 		depToCoursedata[currCourse['dep']].push(currCourse);
 		depToCoursedata['Any'].push(currCourse);
+
+		// Create lists for every professor
+		if (!profToCoursedata[currCourse['prof']]) {
+			profToCoursedata[currCourse['prof']] = [];
+		}
+		profToCoursedata[currCourse['prof']].push(currCourse);
 	}
 	console.log('Refreshing the caches');
 }
