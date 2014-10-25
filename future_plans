@@ -1,6 +1,3 @@
-
-
-
 file preference : xml/json
 historical data : e.g. 
 
@@ -12,17 +9,17 @@ class     : room/building/coordinates
 class     : capacity/taken/how full %/ historical how fast it fills up
 
 
-coursedump
-professordump
-departmentdump
-requirementdump
+coursedump (*)
+professordump (*)
+departmentdump (*)
+requirementdump (*)
 
 
 
-list of courses
-list of professors
-list of departments
-list of requirements
+list of courses (*)
+list of professors (*)
+list of departments (*)
+list of requirements (*)
 
 
 
@@ -30,9 +27,9 @@ list of requirements
 query
 (combine these e.g. hescott in cs serves math req)
 
-- classes by department
+- classes by department (*)
 - classes by professor
-- classes by requirement
+- classes by requirement (*)
 - classes by location/proximity
 - classes by rating
 
